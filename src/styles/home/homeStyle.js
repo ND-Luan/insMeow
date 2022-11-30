@@ -6,7 +6,6 @@ const homeStyle = StyleSheet.create({
   },
   header: {
     padding: 20,
-
     height: 250,
     flex: 1,
     flexDirection: 'column',
