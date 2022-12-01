@@ -1,12 +1,15 @@
 import {StyleSheet, View} from 'react-native';
 import FastImage from 'react-native-fast-image';
 function Media({uriMedia}) {
+  console.log(uriMedia)
   return (
+    
     <FastImage
       style={styles.img}
       source={uriMedia}
       resizeMode={FastImage.resizeMode.cover}
     />
+
   );
 }
 const styles = StyleSheet.create({

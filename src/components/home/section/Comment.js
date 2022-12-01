@@ -7,12 +7,10 @@ import {
   TouchableOpacity,
   TextInput,
 } from 'react-native';
-import FastImage from 'react-native-fast-image';
 
-function Comment({name, likes, content, uriLogo}) {
-  const TitleName = (name) =>{
-    <Text>{name}</Text>
-  }
+
+function Comment({name, likes, content, uriLogo,datePost}) {
+
   return (
     <View style={styles.comment}>
       <Text style={styles.textLikes}>{likes} lượt thích</Text>
@@ -21,8 +19,8 @@ function Comment({name, likes, content, uriLogo}) {
           numberOfLines={1}
           textButtonStyle={{textDecorationLine: 'underline'}}
           animated>
-          <Text>
-            {TitleName(name)}: {content}
+          <Text >
+            {name}: {content}
           </Text>
         </MoreOrLess>
       </View>
@@ -40,7 +38,7 @@ function Comment({name, likes, content, uriLogo}) {
         </View>
       </View>
   */}
-    <Text style={styles.italic}>2 ngày trước</Text>
+    <Text style={styles.italic}>{datePost} ngày trước</Text>
     </View>
   );
 }
