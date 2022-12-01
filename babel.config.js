@@ -11,7 +11,7 @@ module.exports = {
           '@components': './src/components',
           '@constants': './src/constants',
           '@navigation': './src/navigation',
-          '@styles': './src/styles',
+          
         },
       },
     ],

@@ -1,14 +1,20 @@
+import IMGSTORY from '@constants/imgStory';
 import {View, StyleSheet, Text} from 'react-native';
+import FastImage from 'react-native-fast-image';
 import LinearGradient from 'react-native-linear-gradient';
-function ImgCircleStory() {
+function ImgCircleStory({name, uri}) {
   return (
     <View style={styles.container}>
       <LinearGradient
         colors={['#FF6F91', '#FFC75F']}
         style={styles.imgCircleStory}>
-        <View style={styles.img}></View>
+        <FastImage
+          style={styles.img}
+          source={uri}
+          resizeMode={FastImage.resizeMode.contain}
+        />
       </LinearGradient>
-      <Text style={styles.textName}>Name</Text>
+      <Text style={styles.textName}>{name}</Text>
     </View>
   );
 }
