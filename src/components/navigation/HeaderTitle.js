@@ -1,14 +1,14 @@
-import {Text, View, StyleSheet, TouchableOpacity} from 'react-native';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
+import { Text, View, StyleSheet, TouchableOpacity } from 'react-native';
+import { FontAwesomeIcon } from '@fortawesome/react-native-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 import DropDownTitle from './DropDownTitle';
-import {useState} from 'react';
+import { useState } from 'react';
 
 function HeaderTitle() {
   const [show, setShow] = useState(false);
 
   return (
-    <TouchableOpacity style={styles.container} onPress={()=>setShow(!show)}>
+    <TouchableOpacity style={styles.container} onPress={() => setShow(!show)}>
       <Text style={styles.textHeader}>InsMeow</Text>
       <FontAwesomeIcon icon={faChevronDown} />
 
@@ -28,6 +28,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: '600',
     marginRight: 5,
+    color: 'black',
   },
 });
 export default HeaderTitle;

@@ -8,7 +8,7 @@ import Section from '@components/home/section/Section';
 import IMGSECTION from '@constants/imgSection';
 function Home() {
   return (
-    <ScrollView style={styles.container}>
+    <ScrollView style={styles.container}   showsVerticalScrollIndicator ={false}>
       <Story />
       <Section
         name="Cat_1"
@@ -17,7 +17,7 @@ function Home() {
         likes="200"
         content="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book"
       />
-            <Section
+      <Section
         name="Cat_2"
         uriLogo={IMGSECTION.img2.logo}
         uriMedia={IMGSECTION.img2.media}
