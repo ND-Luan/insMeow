@@ -4,7 +4,7 @@ import Comment from './Comment';
 import InteractionIcon from './InteractionIcon';
 import Media from './Media';
 import TitleHeader from './TitleHeader';
-function Section({name, uriLogo, uriMedia, likes, content,datePost}) {
+function Section({name, uriLogo, uriMedia, likes, content,datePost, isVideo}) {
   return (
     <View style={styles.section}>
       {/* Start Card*/}
@@ -13,7 +13,7 @@ function Section({name, uriLogo, uriMedia, likes, content,datePost}) {
         <TitleHeader name={name} uriLogo={uriLogo} />
         {/*Img Card*/}
 
-        <Media uriMedia={uriMedia} />
+        <Media uriMedia={uriMedia} media={isVideo ? 'video':'image'}/>
         <InteractionIcon />
         {/*Comment Card */}
         <Comment
