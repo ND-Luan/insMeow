@@ -1,9 +1,7 @@
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View, Text, TouchableOpacity} from 'react-native';
 import FastImage from 'react-native-fast-image';
-import IMGSECTION from '@constants/imgSection';
-import {faEllipsisVertical} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
+import MenuPopUpMenu from './popupmenu/PopupMenu';
 function TitleHeader({name, uriLogo}) {
   return (
     <View style={styles.row}>
@@ -15,9 +13,10 @@ function TitleHeader({name, uriLogo}) {
         />
         <Text style={styles.textName}>{name}</Text>
       </View>
-      <Text style={styles.rightIcon}>
-        <FontAwesomeIcon style={styles.icon} icon={faEllipsisVertical} size={20}/>
-      </Text>
+
+      <View style={styles.rightIcon}>
+        <MenuPopUpMenu />
+      </View>
     </View>
   );
 }
@@ -42,12 +41,9 @@ const styles = StyleSheet.create({
   },
   rightIcon: {
     flex: 1,
-    top:6
+    top: 6,
   },
 
-  icon: {
-    alignSelf: 'center',
-  },
   textName: {
     fontSize: 15,
     paddingLeft: 10,

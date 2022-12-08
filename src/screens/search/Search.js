@@ -1,5 +1,6 @@
 import ListImage from '@components/search/ListImage';
 import SearchInput from '@components/search/SearchInput';
+
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 function Search() {

@@ -14,8 +14,8 @@ import {useState} from 'react';
 
 function InteractionIcon() {
   const [showHeart, setShowHeart] = useState(false);
-  const [showMessage, setShowMessage] = useState();
-  const [showSend, setShowSend] = useState();
+  //const [showMessage, setShowMessage] = useState();
+  //const [showSend, setShowSend] = useState();
   const [showSave, setShowSave] = useState(false);
   return (
     <View style={styles.imgIcon}>

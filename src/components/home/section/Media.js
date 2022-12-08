@@ -4,12 +4,40 @@ import FastImage from 'react-native-fast-image';
 import Video from 'react-native-video';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {faPlayCircle} from '@fortawesome/free-regular-svg-icons';
-import {faVolumeDown, faVolumeHigh} from '@fortawesome/free-solid-svg-icons';
+import {
+  faVolumeDown,
+  faVolumeHigh,
+  faHeart,
+} from '@fortawesome/free-solid-svg-icons';
 
 function Media({uriMedia, media}) {
   const [isPlaying, setIsPlaying] = React.useState(false);
   const [isMuted, setIsMuted] = React.useState(false);
   const [showIcon, setShowIcon] = React.useState(false);
+
+  const [showHeartMedia, setshowHeartMedia] = React.useState(false);
+  const lastTap = React.useRef(0);
+  const Heart = () => {
+    return (
+      <TouchableOpacity
+        style={styles.heart}
+        onPress={() => {
+          const now = Date.now();
+          const DELAY = 300;
+          if (lastTap.current && now - lastTap.current < DELAY) {
+            setshowHeartMedia(!showHeartMedia)
+            
+          } else {
+            lastTap.current = now;
+          }
+        }}>
+        {showHeartMedia && (
+          <FontAwesomeIcon icon={faHeart} color={'red'} size={60} />
+        )}
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View>
       {media == 'video' ? (
@@ -21,11 +49,9 @@ function Media({uriMedia, media}) {
             source={uriMedia}
             resizeMode="contain"
             repeat={true}
-            
-            onTouchEnd ={()=> setIsPlaying(p => !p)}
-            
+            onTouchEnd={() => setIsPlaying(p => !p)}
           />
-         
+
           <TouchableOpacity
             style={styles.btnMute}
             onPress={() => {
@@ -40,11 +66,14 @@ function Media({uriMedia, media}) {
           </TouchableOpacity>
         </View>
       ) : (
-        <FastImage
-          style={styles.img}
-          source={uriMedia}
-          resizeMode={FastImage.resizeMode.cover}
-        />
+        <View>
+          <FastImage
+            style={styles.img}
+            source={uriMedia}
+            resizeMode={FastImage.resizeMode.cover}
+          />
+          <Heart />
+        </View>
       )}
     </View>
   );
@@ -69,6 +98,14 @@ const styles = StyleSheet.create({
     position: 'absolute',
     alignSelf: 'center',
     bottom: 140,
+  },
+  heart: {
+    position: 'absolute',
+
+    width: '100%',
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
   },
 });
 export default Media;
