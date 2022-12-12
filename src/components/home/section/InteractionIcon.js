@@ -10,18 +10,23 @@ import {
   faBookmark as saveRegular,
 } from '@fortawesome/free-regular-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {useState} from 'react';
+import {useContext, useState} from 'react';
+import {Context} from '@appContext/AppProvider';
 
 function InteractionIcon() {
-  const [showHeart, setShowHeart] = useState(false);
   //const [showMessage, setShowMessage] = useState();
   //const [showSend, setShowSend] = useState();
   const [showSave, setShowSave] = useState(false);
+  const context = useContext(Context);
   return (
     <View style={styles.imgIcon}>
       <View style={styles.imgIconList}>
-        <TouchableOpacity onPress={() => setShowHeart(!showHeart)}>
-          {showHeart ? (
+        <TouchableOpacity
+          onPress={() => {
+            context.funcsetShowHeart();
+            context.funcsetLike();
+          }}>
+          {context.showHeart ? (
             <FontAwesomeIcon icon={heartFull} size={25} />
           ) : (
             <FontAwesomeIcon icon={heartRegular} size={25} />

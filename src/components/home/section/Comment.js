@@ -1,4 +1,6 @@
+import { Context } from '@appContext/AppProvider';
 import {MoreOrLess} from '@rntext/more-or-less';
+import { useContext } from 'react';
 
 import {
   StyleSheet,
@@ -11,9 +13,10 @@ import {
 
 function Comment({name, likes, content, uriLogo,datePost}) {
 
+  const context = useContext(Context)
   return (
     <View style={styles.comment}>
-      <Text style={styles.textLikes}>{likes} lượt thích</Text>
+      <Text style={styles.textLikes}>{context.like} lượt thích</Text>
       <View>
         <MoreOrLess
           numberOfLines={1}

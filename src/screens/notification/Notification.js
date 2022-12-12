@@ -1,17 +1,23 @@
+import After from '@components/notification/After';
+import Month from '@components/notification/month/Month';
+import RequireFollow from '@components/notification/requirefollow/RequireFollow';
+import Suggest from '@components/notification/Suggest';
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 function Notification() {
   return (
     <View style={styles.container}>
-      <Text>Notification</Text>
+      <RequireFollow />
+      <Month />
+      <After />
+      <Suggest />
     </View>
   );
 }
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
+    padding:20
   },
 });
 export default Notification;

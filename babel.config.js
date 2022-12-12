@@ -11,10 +11,9 @@ module.exports = {
           '@components': './src/components',
           '@constants': './src/constants',
           '@navigation': './src/navigation',
-          
+          '@appContext': './src/appContext',
         },
       },
     ],
-    
   ],
 };

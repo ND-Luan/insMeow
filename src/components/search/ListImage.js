@@ -27,10 +27,22 @@ function ListImage() {
             resizeMode={FastImage.resizeMode.cover}
           />
         </View>
-        <FastImage source={IMGSEARCH.img5} style={styles.imgVertical} />
+        <View style={styles.imgVertical}>
+          <FastImage
+            source={IMGSEARCH.img5}
+            style={{flex: 1}}
+            resizeMode={FastImage.resizeMode.cover}
+          />
+        </View>
       </View>
       <View style={styles.row}>
-        <FastImage source={IMGSEARCH.img6} style={styles.imgVertical} />
+      <View style={styles.imgVertical}>
+          <FastImage
+            source={IMGSEARCH.img6}
+            style={{flex: 1}}
+            resizeMode={FastImage.resizeMode.cover}
+          />
+        </View>
         <View style={styles.rowImg}>
           <FastImage
             source={IMGSEARCH.img7}
@@ -53,6 +65,7 @@ function ListImage() {
             resizeMode={FastImage.resizeMode.cover}
           />
         </View>
+        
       </View>
     </View>
   );
@@ -61,31 +74,25 @@ function ListImage() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: '100%',
   },
-  row: {
-    flexDirection: 'row',
-  },
-
+  row: {height: 240, flexDirection: 'row'},
   img: {
-    width: 120,
-    height: 125,
+    width: 118,
+    height: 118,
     marginHorizontal: 1,
     marginVertical: 1,
+
+    flexDirection: 'row',
   },
   imgVertical: {
-    width: 123,
-
-    height: 255,
+    flex: 2,
     marginHorizontal: 1,
     marginVertical: 1,
   },
   rowImg: {
-    height: 255,
-
-    width: 200,
+    flex: 4,
+  
     flexWrap: 'wrap',
-    backgroundColor: 'red',
   },
 });
 export default ListImage;

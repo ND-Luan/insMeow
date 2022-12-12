@@ -3,35 +3,19 @@ import {StyleSheet, View, TouchableOpacity, Text} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import Video from 'react-native-video';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
-import {faPlayCircle} from '@fortawesome/free-regular-svg-icons';
 import {
   faVolumeDown,
   faVolumeHigh,
   faHeart,
 } from '@fortawesome/free-solid-svg-icons';
+import {Context} from '@appContext/AppProvider';
 
 function Media({uriMedia, media}) {
-  const [isPlaying, setIsPlaying] = React.useState(false);
-  const [isMuted, setIsMuted] = React.useState(false);
-  const [showIcon, setShowIcon] = React.useState(false);
-
-  const [showHeartMedia, setshowHeartMedia] = React.useState(false);
-  const lastTap = React.useRef(0);
+  const context = React.useContext(Context);
   const Heart = () => {
     return (
-      <TouchableOpacity
-        style={styles.heart}
-        onPress={() => {
-          const now = Date.now();
-          const DELAY = 300;
-          if (lastTap.current && now - lastTap.current < DELAY) {
-            setshowHeartMedia(!showHeartMedia)
-            
-          } else {
-            lastTap.current = now;
-          }
-        }}>
-        {showHeartMedia && (
+      <TouchableOpacity style={styles.heart} onPress={context.doubleTap}>
+        {context.showHeartMedia && (
           <FontAwesomeIcon icon={faHeart} color={'red'} size={60} />
         )}
       </TouchableOpacity>
@@ -43,22 +27,23 @@ function Media({uriMedia, media}) {
       {media == 'video' ? (
         <View style={{flex: 1}}>
           <Video
-            paused={!isPlaying}
-            muted={isMuted}
+            paused={!context.isPlaying}
+            muted={context.isMuted}
             style={styles.video}
             source={uriMedia}
             resizeMode="contain"
             repeat={true}
-            onTouchEnd={() => setIsPlaying(p => !p)}
+            onTouchEnd={context.funcsetIsPlaying}
           />
 
           <TouchableOpacity
             style={styles.btnMute}
             onPress={() => {
-              setShowIcon(!showIcon);
-              setIsMuted(m => !m);
+              context.funcsetShowIconLike();
+
+              context.funcsetIsMuted();
             }}>
-            {showIcon ? (
+            {context.showIconLike ? (
               <FontAwesomeIcon icon={faVolumeDown} size={17} />
             ) : (
               <FontAwesomeIcon icon={faVolumeHigh} size={17} />
