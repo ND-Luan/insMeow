@@ -1,8 +1,8 @@
 import React, {useState, createContext, useRef} from 'react';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 
-import {faUser} from '@fortawesome/free-regular-svg-icons';
-import {faInfo} from '@fortawesome/free-solid-svg-icons';
+import {faUser, faAddressBook} from '@fortawesome/free-regular-svg-icons';
+import {faInfo, faAdd} from '@fortawesome/free-solid-svg-icons';
 import FastImage from 'react-native-fast-image';
 import {StyleSheet} from 'react-native';
 import IMGAFTER from '@constants/imgAfterNofication';
@@ -119,6 +119,24 @@ function AppProvider({children}) {
     );
   };
   const mediaAfterPost4 = IMGAFTER.img4.media;
+
+  //Self
+  //DropdownHeader
+  const titleDropDownHeader = 'Myself';
+  const avatarDropDownHeader = () => {
+    return (
+      <FastImage
+        source={require('../assets/self/avatarDropdownHeader.jpg')}
+        resizeMode={FastImage.resizeMode.cover}
+        style={styles.circleDropDown}
+      />
+    );
+  };
+  const addAccount = 'Thêm tài khoản';
+  const avatarAddAccount = () => {
+    return <FontAwesomeIcon icon={faAdd} size={20} />;
+  };
+
   const value = {
     like,
     funcsetLike,
@@ -173,6 +191,18 @@ function AppProvider({children}) {
         },
       },
     },
+    self: {
+      dropdownHeader: {
+        titleSelf: {
+          title: titleDropDownHeader,
+          avatar: avatarDropDownHeader(),
+        },
+        addAccount: {
+          title: addAccount,
+          avatar: avatarAddAccount(),
+        },
+      },
+    },
   };
   return <Context.Provider value={value}>{children}</Context.Provider>;
 }
@@ -182,6 +212,12 @@ const styles = StyleSheet.create({
     height: 60,
     borderWidth: 1,
     borderRadius: 60 / 2,
+  },
+  circleDropDown: {
+    width: 70,
+    height: 70,
+    borderRadius: 70 / 2,
+    borderWidth: 1,
   },
 });
 export default AppProvider;

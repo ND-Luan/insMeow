@@ -11,8 +11,8 @@ import {TouchableOpacity, Text} from 'react-native';
 
 //Icon
 
-import HeaderTitle from '@components/navigation/HeaderTitle';
-import HeaderRight from '@components/navigation/HeaderRight';
+import HeaderTitle from '@components/navigation/home/HeaderTitle';
+import HeaderRight from '@components/navigation/home/HeaderRight';
 import {FontAwesomeIcon} from '@fortawesome/react-native-fontawesome';
 import {
   faHeart as heartRegular,
@@ -28,6 +28,8 @@ import {
   faHeart as heartFull,
   faUser as userFull,
 } from '@fortawesome/free-solid-svg-icons';
+import HeaderSelfTitle from '@components/navigation/self/HeaderSelfTitle';
+import HeaderSelfRight from '@components/navigation/self/HeaderSelfRight';
 const Tab = createBottomTabNavigator();
 
 function MainTab() {
@@ -42,7 +44,7 @@ function MainTab() {
         },
         tabBarHideOnKeyboard: true,
       }}
-      initialRouteName="Home">
+      initialRouteName="Self">
       <Tab.Screen
         name="Home"
         component={Home}
@@ -94,7 +96,7 @@ function MainTab() {
         name="Notification"
         component={Notification}
         options={{
-          headerTitle:"Thông báo",
+          headerTitle: 'Thông báo',
           tabBarShowLabel: false,
           tabBarIcon: ({focused}) => (
             <FontAwesomeIcon
@@ -108,7 +110,7 @@ function MainTab() {
         name="Self"
         component={Self}
         options={{
-          headerShown: false,
+          headerShown: true,
           tabBarShowLabel: false,
           tabBarIcon: ({focused}) => (
             <FontAwesomeIcon
@@ -116,6 +118,8 @@ function MainTab() {
               size={25}
             />
           ),
+          headerTitle: () => <HeaderSelfTitle />,
+          headerRight: () => <HeaderSelfRight />,
         }}></Tab.Screen>
     </Tab.Navigator>
   );
