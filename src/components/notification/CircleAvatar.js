@@ -1,9 +1,9 @@
-
 import {View, StyleSheet} from 'react-native';
-function CircleAvatar({chilren}) {
+function CircleAvatar({avatar}) {
+  console.log(avatar);
   return (
     <View style={styles.circle}>
-      <View style={styles.icon}>{chilren}</View>
+      <View style={styles.icon}>{avatar}</View>
     </View>
   );
 }

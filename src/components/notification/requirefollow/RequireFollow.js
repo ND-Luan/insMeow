@@ -7,9 +7,9 @@ function RequireFollow() {
   const context = useContext(Context);
   const title = context.notification.requireFollow.title;
   const subTitle = context.notification.requireFollow.subTitle;
-  const media = context.notification.requireFollow.media;
-  console.log(media);
-  return <ItemList title={title} subTitle={subTitle} chilren={media} />;
+  const avatar = context.notification.requireFollow.avatar;
+  console.log(title);
+  return <ItemList title={title} subTitle={subTitle} avatar={avatar} isMedia/>;
 }
 const styles = StyleSheet.create({});
 export default RequireFollow;

@@ -10,14 +10,18 @@ function InfoCircle({title, subTitle}) {
 }
 const styles = StyleSheet.create({
   row: {
-    flexDirection: 'column',
-    paddingLeft: 20,
-  },
-  textTitle: {fontSize: 14, fontWeight: '500'},
-  textSubTitle: {
-    fontSize: 14,
-    fontWeight: '300',
+    flexShrink: 1,
+    paddingLeft: 10,
 
+  },
+  textTitle: {
+    fontSize: 13,
+    fontWeight: '500',
+  
+  },
+  textSubTitle: {
+    fontSize: 12,
+    fontWeight: '300',
   },
 });
 export default InfoCircle;

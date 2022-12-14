@@ -1,11 +1,16 @@
 import {Text, View, StyleSheet} from 'react-native';
+import ButtonFollowing from './ButtonFollowing';
 import CircleAvatar from './CircleAvatar';
 import InfoCircle from './InfoCircle';
-function ItemList({title, subTitle, chilren}) {
+import Media from './Media';
+function ItemList({title, subTitle, media, avatar, isBtn, isMedia}) {
+  //console.log(media);
   return (
     <View style={styles.container}>
-      <CircleAvatar chilren={chilren}/>
-      <InfoCircle title={title} subTitle={subTitle}/>
+      <CircleAvatar avatar={avatar} />
+      <InfoCircle title={title} subTitle={subTitle} />
+      {isMedia && <Media media={media} />}
+      {isBtn && <ButtonFollowing />}
     </View>
   );
 }
@@ -15,6 +20,8 @@ const styles = StyleSheet.create({
 
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 10,
   },
 });
 export default ItemList;
