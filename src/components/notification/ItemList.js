@@ -7,8 +7,10 @@ function ItemList({title, subTitle, media, avatar, isBtn, isMedia}) {
   //console.log(media);
   return (
     <View style={styles.container}>
-      <CircleAvatar avatar={avatar} />
-      <InfoCircle title={title} subTitle={subTitle} />
+      <View style={{flexDirection: 'row', alignItems:"center", flexShrink:1}}>
+        <CircleAvatar avatar={avatar} />
+        <InfoCircle title={title} subTitle={subTitle} />
+      </View>
       {isMedia && <Media media={media} />}
       {isBtn && <ButtonFollowing />}
     </View>
@@ -17,7 +19,6 @@ function ItemList({title, subTitle, media, avatar, isBtn, isMedia}) {
 const styles = StyleSheet.create({
   container: {
     height: 60,
-
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'space-between',
