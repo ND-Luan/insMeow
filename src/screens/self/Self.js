@@ -4,10 +4,11 @@ import React from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 function Self() {
   return (
-    <ScrollView style={styles.container}>
+    <View style={styles.container}>
+      {/*ScrollView  error*/}
       <Header />
       <Article />
-    </ScrollView>
+    </View>
   );
 }
 const styles = StyleSheet.create({

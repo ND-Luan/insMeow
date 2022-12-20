@@ -1,7 +1,7 @@
 import {useEffect, useRef} from 'react';
 import {Animated, Easing} from 'react-native';
 
-function LineAnimation() {
+function LineAnimation({chilren}) {
   const motion = useRef(new Animated.Value(0)).current;
   useEffect(() => {
     Animated.timing(motion, {
@@ -12,6 +12,6 @@ function LineAnimation() {
     });
   }, []);
 
-  return <Animated.View></Animated.View>;
+  return <Animated.View>{chilren}</Animated.View>;
 }
 export default LineAnimation;

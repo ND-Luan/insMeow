@@ -1,20 +1,14 @@
 import {Text, View, StyleSheet} from 'react-native';
-import Line from '../Line';
 
 function Left() {
   return (
     <View style={styles.container}>
       <Text>Left</Text>
-      <Line />
+      <Text>ÁDASDASDAS</Text>
     </View>
   );
 }
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    
-  },
+  container: {flex: 1, backgroundColor: 'red'},
 });
 export default Left;
