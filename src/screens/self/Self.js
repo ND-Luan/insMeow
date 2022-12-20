@@ -1,11 +1,13 @@
+import Article from '@components/self/article/Article';
 import Header from '@components/self/header/Header';
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, ScrollView} from 'react-native';
 function Self() {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <Header />
-    </View>
+      <Article />
+    </ScrollView>
   );
 }
 const styles = StyleSheet.create({

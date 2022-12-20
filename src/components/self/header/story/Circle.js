@@ -5,12 +5,17 @@ import {
   TouchableOpacity,
   View,
 } from 'react-native';
+import FastImage from 'react-native-fast-image';
 
-function Circle() {
+function Circle({name, urlImage}) {
   return (
     <View style={{marginRight: 10}}>
-      <View style={styles.circle}></View>
-      <Text style={{textAlign: 'center'}}>Text</Text>
+      <FastImage
+        source={urlImage}
+        style={styles.circle}
+        resizeMode={FastImage.resizeMode.cover}
+      />
+      <Text style={{textAlign: 'center'}}>{name}</Text>
     </View>
   );
 }
