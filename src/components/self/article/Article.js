@@ -1,9 +1,15 @@
 import * as React from 'react';
-import { View, useWindowDimensions } from 'react-native';
+import { View, useWindowDimensions,Text } from 'react-native';
 import { TabView, SceneMap } from 'react-native-tab-view';
 
 const FirstRoute = () => (
-  <View style={{ flex: 1, backgroundColor: '#ff4081' }} />
+  <View style={{ flex: 1, backgroundColor: '#ff4081' }} >
+     <Text>ÁDASDASDAS</Text>
+     <Text>ÁDASDASDAS</Text>
+     <Text>ÁDASDASDAS</Text>
+     <Text>ÁDASDASDAS</Text>
+     <Text>ÁDASDASDAS</Text>
+  </View>
 );
 
 const SecondRoute = () => (

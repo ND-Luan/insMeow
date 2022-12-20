@@ -6,8 +6,9 @@ function Self() {
   return (
     <View style={styles.container}>
       {/*ScrollView  error*/}
-      <Header />
-      <Article />
+         <Header />
+        <Article />
+ 
     </View>
   );
 }

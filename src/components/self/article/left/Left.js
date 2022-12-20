@@ -5,6 +5,14 @@ function Left() {
     <View style={styles.container}>
       <Text>Left</Text>
       <Text>ÁDASDASDAS</Text>
+      <Text>ÁDASDASDAS</Text>
+      <Text>ÁDASDASDAS</Text>
+      <Text>ÁDASDASDAS</Text>
+
+      <Text>ÁDASDASDAS</Text>
+      <Text>ÁDASDASDAS</Text>
+      <Text>ÁDASDASDAS</Text>
+      <Text>ÁDASDASDAS</Text>
     </View>
   );
 }
