@@ -6,7 +6,7 @@ function Explore() {
   return (
     <View style={styles.container}>
       <Title />
-      <ScrollView horizontal={true} style={{flexDirection: 'row', paddingTop:10}}>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} style={{flexDirection: 'row', paddingTop:10}}>
         <Card />
         <Card />
         <Card />

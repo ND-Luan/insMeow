@@ -3,7 +3,7 @@ import {ScrollView, StyleSheet, View} from 'react-native';
 import Circle from './Circle';
 function Story() {
   return (
-    <ScrollView horizontal={true}>
+    <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
       <View style={styles.container}>
         <Circle urlImage={IMGSELFSTORY.img1} name="A" />
         <Circle urlImage={IMGSELFSTORY.img2} name="B" />
