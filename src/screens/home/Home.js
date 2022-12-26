@@ -7,6 +7,7 @@ import Section from '@components/home/section/Section';
 
 import IMGSECTION from '@constants/imgSection';
 function Home() {
+
   return (
     <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
       <Story />
